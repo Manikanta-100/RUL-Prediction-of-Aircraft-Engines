@@ -1,0 +1,855 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;  /* Ensure that the body takes up the full height of the viewport */
+}
+
+body {
+    margin-top: 70px;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute the space between header, content, and footer */
+    min-height: 60vh;
+}
+
+/* Header */
+/* Header */
+header {
+    position: fixed;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    top: 0px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 60px;
+}
+
+header h2{
+    margin-top: 1px;
+}
+
+header h2 p{
+    margin-top: 5px;
+}
+
+#ra121 {
+    margin-left: 350px;
+    font-size: larger;
+}
+
+#ra122,
+#ra123,
+#ra124,
+#ra125, #ra126 {
+    margin-left: 20px;
+    font-size: larger;
+}
+
+
+
+.logo img {
+    max-height: 50px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 5px;
+    margin-left: 250px;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+    padding: 10px 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: black; /* Highlight color */
+}
+
+.navBorder {
+    border: 2px solid black;
+    border-radius: 0.35rem; /* More in line with Bootstrap's border radius */
+    padding: 0.375rem 0.75rem; /* Standard Bootstrap button padding */
+    color: white; /* Text color */
+}
+
+
+
+
+
+footer {
+    margin-top: 30px;
+    background-color: #003366;
+    color: #fff;
+    text-align: left;
+    padding: 3px 50px;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-icons {
+    display: flex;
+}
+
+.social-icons a {
+    margin-right: 10px;
+}
+
+.social-handles a {
+    margin: 0 15px;
+    display: inline-block;
+}
+
+.social-handles img {
+    margin-top: 12px;
+    width: 30px;
+    height: 30px;
+}
+
+.social-handles img:hover {
+    border-radius: 50%;
+    box-shadow: 1px 2px 5px white;
+}
+
+/* Team Section */
+.team-section {
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px green;
+}
+
+.team-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.team-member {
+    background-color: rgb(239, 151, 56); /* Default color */
+    border-radius: 10px;
+    padding: 20px;
+    width: 350px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.team-member:hover {
+    transform: scale(1.05);
+    /* background-color: rgb(255, 175, 75); */
+}
+
+.team-member h4 {
+    color: rgb(0, 8, 3);
+    font-size: 20px;
+}
+
+.team-member p {
+    color: aliceblue;
+    margin: 5px 0;
+}
+
+.team-member a {
+    /* color: aliceblue; */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+
+/* Specific Colors for each member */
+.top-right {
+    background-color: rgb(239, 151, 56); /* Kothaluri Murari */
+}
+
+.bottom-left {
+    background-color: rgb(42, 239, 108); /* Pappuru Manikanta */
+}
+
+.bottom-right {
+    background-color: rgb(110, 169, 241); /* Boyana Rahul */
+}
+
+
+/* Project Details */
+.project-details {
+    padding: 20px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-details h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.project-details ul {
+    margin-top: 10px;
+}
+
+.project-details ul li {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+
+section {
+    padding: 20px;
+    margin: 20px 0;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    margin-bottom: 10px;
+}
+
+.features ul, .methodology ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.dataset a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.dataset a:hover {
+    text-decoration: underline;
+}
+
+
+/* Container for images */
+.image-row {
+    display: flex;
+    justify-content: space-between; /* Adds space between the images */
+    margin-bottom: 20px; /* Adds space between rows */
+}
+
+/* Images */
+.image-row-box {
+    width: 48%; /* Adjust this to fit two images per row */
+    height: auto;
+    border: 1px solid #ddd; /* Optional border for images */
+    padding: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    margin: 2px;
+    box-shadow: 0 2px 4px green;
+}
+
+.fitImg {
+    width: 100%;          /* Make the image take up the full width of the container */
+    height: auto;        /* Maintain the aspect ratio of the image */
+    display: block;      /* Remove any extra space below the image */
+    object-fit: contain; /* Scale the image to fit within the container */
+    
+}
+
+.image-row-box img {
+     /* Ensures the image behaves like an inline element */
+    margin: 0 auto; /* Centers the image horizontally */
+    width: 99%; /* Keeps the width of the image as per your original layout */
+    height: auto; /* Maintains aspect ratio */
+}
+
+
+
+.image-fullrow img {
+    width: 99%; /* Adjust this to fit two images per row */
+    height: auto;
+}
+
+h4 {
+    font-size: 20px; /* Larger font size to stand out */
+    font-weight: bold; /* Makes the text bold */
+    color: #333; /* Darker color for better readability */
+    /* text-align: center; Center align the heading with the image */
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Use a clean font */
+    margin: 2px;
+    padding-bottom: 5px; /* Space between the heading text and the border */
+}
+
+.image-fullrow {
+    width: 99%; /* Adjust this to fit two images per row */
+    height: auto;
+    border: 1px solid #ddd; /* Optional border for images */
+    padding: 5px;
+    margin: 20px auto;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    box-shadow: 0 2px 4px green;
+}
+
+
+#resultContainer {
+    width: 1500px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;   
+}
+
+.imageSelector {
+    padding: 3px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #333;
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    transition: all 0.3s ease;
+    margin-left: 2px;  /* Space between the dropdown and image */
+    box-shadow: 0px 0px 3px green;
+}
+
+.imageSelector:hover {
+    border-color: #888;
+    box-shadow: 0px 0px 7px green; /* Slightly larger shadow on hover */
+}
+
+
+/* Styling the buttons */
+button {
+    background-color: white; /* Green background */
+    color: black; /* White text */
+    padding: 10px 20px; /* Padding for the buttons */
+    margin: 5px; /* Space between buttons */
+    margin-bottom: 0px;
+    border: 0.1px solid black; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Change button color on hover */
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Center the buttons horizontally */
+.image-fullrow div {
+    display: flex;
+    justify-content: center; /* Center the buttons */
+    flex-wrap: wrap; /* Wrap the buttons if there are many */
+}
+
+/* Optional: Adjust button size on smaller screens */
+@media (max-width: 600px) {
+    button {
+        width: 100%; /* Full width buttons on small screens */
+        margin: 10px 0; /* More space between buttons */
+    }
+}
+
+
+/* .rectBox {
+    padding: 20px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px green;
+} */
+
+
+.rectBox {
+    background-color: #f8f9fa; /* Light background color similar to Bootstrap's card */
+    border: 1px solid #dee2e6; /* Border with a soft gray color */
+    border-radius: 0.25rem; /* Slightly rounded corners */
+    padding: 20px; /* Padding for spacing */
+    box-shadow: 0 2px 4px green; /* Soft shadow for a subtle 3D effect */
+    width: 90%; /* Limit the width for better readability */
+    margin: 20px auto; /* Center the section with margin */
+}
+
+.rectBox h2 {
+    color: #343a40; /* Dark gray color for the heading */
+    font-size: 1.75rem; /* Bootstrap-style heading size */
+    border-bottom: 2px solid #28a745; /* Green underline */
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.rectBox h3 {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.rectBox p {
+    color: black; /* Bootstrap's muted text color */
+    font-size: 1.1rem; /* Base font size */
+    line-height: 1.6; /* Spacing between lines for readability */
+    margin-bottom: 0;
+    text-align: justify;
+}
+
+.rectBox li {
+    color: black; /* Bootstrap's muted text color */
+    font-size: 1.1rem; /* Base font size */
+    line-height: 1.6; /* Spacing between lines for readability */
+    margin-bottom: 0;
+    text-align: justify;
+}
+
+.rectBox img {
+    max-width: 95%;
+    height: auto;
+    margin-left: 50px;
+}
+
+
+
+.box-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.data-box {
+    flex: 1;
+    background-color: #e9ecef;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.data-box h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.data-box p {
+    text-align: center;
+    font-size: 1rem;
+    margin: 0;
+}
+
+
+
+/* Hero */
+
+.hero-section {
+    /* background: linear-gradient(135deg, rgba(76, 175, 80, 0.8), rgba(255, 255, 255, 0.7)); Soft gradient */
+    color: #333; /* Darker text color for contrast */
+    padding: 60px 20px; /* Add vertical padding for spacing */
+    text-align: center; /* Center the text */
+    border-radius: 10px; /* Rounded corners */
+    margin: 20px; /* Add margin to separate from other content */
+}
+
+.hero-section h1 {
+    font-size: 2.5rem; /* Large font size for the heading */
+    margin-bottom: 20px; /* Spacing below the heading */
+}
+
+.hero-section p {
+    font-size: 1rem; /* Slightly larger paragraph text */
+    margin-bottom: 30px; /* Spacing below the paragraph */
+}
+
+.hero-section a {
+    text-decoration: none; /* Remove underline from link */
+}
+
+.hero-section .btn {
+    background-color: #fff; /* Light button background */
+    color: #4CAF50; /* Button text color matching the header */
+    border: 0.5px solid green; /* Remove border */
+    padding: 10px 20px; /* Button padding */
+    border-radius: 5px; /* Rounded button corners */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.hero-section .btn:hover {
+    background-color: #4CAF50; /* Change background on hover */
+    color: white; /* Change text color on hover */
+}
+
+
+
+.features-section {
+    padding: 60px 20px; /* Vertical padding for spacing */
+    background-color: #f9f9f9; 
+    color: #333; /* Dark text color for contrast */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.features-title {
+    text-align: center; /* Center the title */
+    font-size: 2rem; /* Font size for the title */
+    margin-bottom: 40px; /* Space below the title */
+    font-weight: 600; /* Semi-bold title */
+    color: black; /* Title color matching the header */
+}
+
+.features-list {
+    display: flex; /* Flexbox for horizontal alignment */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content:space-evenly; /* Center the feature items */
+    align-items: center;
+    gap: 20px; /* Space between feature items */
+}
+
+.feature-item {
+    
+    padding: 20px; /* Internal padding */
+    text-align: center; /* Center text */
+    width: 300px; /* Fixed width for feature items */
+    transition: transform 0.3s, box-shadow 0.3s; /* Animation for hover effect */
+}
+
+.feature-item h3 {
+    font-size: 1.2rem; /* Font size for feature heading */
+    margin-bottom: 15px; /* Space below heading */
+}
+
+.feature-item p {
+    font-size: 0.9rem; /* Font size for description */
+    color: #666; /* Lighter color for description text */
+}
+
+.feature-item:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+
+
+.box-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.data-box {
+    flex: 1;
+    background-color: #e9ecef;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.data-box h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.data-box p {
+    text-align: center;
+    font-size: 1rem;
+    margin: 0;
+}
+
+
+
+.technologies-section {
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.heading-title {
+    text-align: center;
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+}
+
+.tech-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap; /* For better responsiveness */
+}
+
+.tech-box {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s; /* Optional for hover effect */
+    max-width: calc(50% - 20px); /* Ensure boxes are aligned as cards */
+    margin-bottom: 20px;
+}
+
+.tech-box:hover {
+    transform: translateY(-5px); /* Optional for hover effect */
+}
+
+.left-box,
+.right-box {
+    text-align: left;
+}
+
+.tech-box h3 {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.tech-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.tech-box li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.tech-box li strong {
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .tech-box {
+        max-width: 100%;
+    }
+}
+
+
+
+.models-section {
+    padding: 40px 20px;
+    background-color: #f8f9fa; /* Light background for contrast */
+}
+
+.models-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.model-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Align items properly */
+    gap: 20px; /* Spacing between cards */
+}
+
+.model-card {
+    flex: 1 1 calc(33.33% - 20px); /* Responsive sizing */
+    background-color: #ffffff; /* Card background */
+    border: 1px solid #dee2e6; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.2s; /* Smooth hover effect */
+    padding: 20px; /* Inner padding */
+    text-align: center; /* Centered content */
+}
+
+.model-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.card-body {
+    padding: 20px; /* Card body padding */
+}
+
+.model-icon {
+    font-size: 64px; /* Icon size */
+    margin-bottom: 15px; /* Spacing below icon */
+}
+
+.card-title {
+    font-size: 1.5rem; /* Title size */
+    margin-bottom: 10px; /* Space below title */
+}
+
+.card-text {
+    font-size: 1rem; /* Text size */
+}
+
+/* Media query for responsive layout */
+@media (max-width: 768px) {
+    .model-card {
+        flex: 1 1 100%; /* Stack cards on small screens */
+    }
+}
+
+.methodology {
+    padding: 40px 20px; /* Top and bottom padding */
+    background-color: #f8f9fa; /* Light background */
+}
+
+.methodology h2 {
+    text-align: center; /* Centered heading */
+    font-size: 2rem; /* Heading size */
+    margin-bottom: 20px; /* Space below heading */
+}
+
+.methodology h3 {
+    text-align: center; /* Centered subheading */
+    font-size: 1.5rem; /* Subheading size */
+    margin-bottom: 30px; /* Space below subheading */
+}
+
+.methodology-container {
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Stack cards vertically */
+    gap: 20px; /* Spacing between cards */
+}
+
+.methodology-card {
+    background-color: #ffffff; /* Card background color */
+    border: 1px solid #dee2e6; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 15px; /* Inner padding */
+    text-align: left; /* Left-aligned text */
+    transition: transform 0.2s; /* Smooth hover effect */
+    margin: 0px 200px;
+    /* height: 40px; */
+}
+
+.methodology-card {
+    opacity: 1; /* Start with cards invisible */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+}
+
+
+.methodology-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    
+    transform: scale(1.15); /* Start scaled down */
+}
+
+.methodology-card h4 {
+    text-align: center;
+    font-size: 1.25rem; /* Card title size */
+}
+
+.methodology-card p {
+    font-size: 1rem; /* Card text size */
+    text-align: center;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .methodology-card {
+        flex: 1 1 100%; /* Stack cards on small screens */
+    }
+}
+
+
+
+/* Container for the model comparison */
+.model-comparison-section {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
+    background-color: white;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* Title styling */
+.model-comparison-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+/* Table header styling */
+thead th {
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-bottom: 2px solid #ccc;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Table body styling */
+tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    color: #555;
+}
+
+/* Alternating row colors */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+/* Table row hover effect */
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 768px) {
+    .model-comparison-section {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    table {
+        font-size: 14px;
+    }
+}
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+

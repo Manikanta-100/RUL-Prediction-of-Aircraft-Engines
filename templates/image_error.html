@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Connection Error</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="error-message">
+        <h2>Database Not Connected</h2>
+        <p>We are currently unable to access the database. Please try again later.</p>
+        <img src="{{ url_for('static', filename='img/alt-image.png') }}" alt="Alternative Image" style="width: 300px; height: auto;">
+    </div>
+</body>
+</html>

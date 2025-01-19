@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RUL Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 70px;
+        }
+        .result-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .result {
+            font-size: 24px;
+            color: #333;
+        }
+        .back-btn {
+            margin-top: 200px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="{{ url_for('static', filename='img/engine-logo.jpg') }}" alt="Logo">
+    </div>
+
+    <h2> RUL Prediction
+        <hr style="color: white;">
+        <p style="font-size: small;">Remaining Useful Life of Engines</p>
+    </h2>
+    <nav>
+        <ul>
+            <li id="ra121"><a href="{{ url_for('index') }}" aria-label="Home">Home</a></li>
+            <li id="ra122"><a href="{{ url_for('dataset') }}" aria-label="Dataset">Dataset</a></li>
+            <li class="navBorder" id="ra125"><a style="color: black;" href="{{ url_for('index1') }}" aria-label="Predict">Predict</a></li>
+            <li id="ra123"><a href="{{ url_for('results') }}" aria-label="Results">Results</a></li>
+            <li id="ra124"><a href="{{ url_for('about') }}" aria-label="Team">Team</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="result-container">
+    <h2>RUL Prediction Result</h2>
+    <p class="result">The predicted Remaining Useful Life (RUL) of the engine is: <strong>{{ predicted_rul }}</strong> cycles.</p>
+</div>
+<div>
+<a href="{{ url_for('index1') }}" class="back-btn">Go back to the form</a>
+</div>
+
+</body>
+</html>

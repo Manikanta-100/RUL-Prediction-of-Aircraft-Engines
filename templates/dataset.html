@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Project - Dataset</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='img/engine-logo.jpg') }}" alt="Logo">
+        </div>
+
+        <h2> RUL Prediction
+            <hr style="color: white;">
+            <p style="font-size: small;">Remaining Useful Life of Engines</p>
+        </h2>
+        <nav>
+            <ul>
+                <li id="ra121"><a href="{{ url_for('index') }}" aria-label="Home">Home</a></li>
+                <li class="navBorder" id="ra122"><a style="color: black;" href="{{ url_for('dataset') }}" aria-label="Dataset">Dataset</a></li>
+                <li id="ra125"><a href="{{ url_for('index1') }}" aria-label="Predict">Predict</a></li>
+                <li id="ra123"><a href="{{ url_for('results') }}" aria-label="Results">Results</a></li>
+                <li id="ra124"><a href="{{ url_for('about') }}" aria-label="Team">Team</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <br>
+    <h2 style="text-align: center; text-decoration: underline;">NASA C-MAPSS Dataset Overview</h2>
+    
+    <section class="rectBox">
+        <h2>Description</h2>
+        <p>This dataset, derived from NASA's well-known public dataset for asset degradation modeling, focuses on Run-to-Failure data from simulated turbo fan jet engines.
+
+            The simulation was performed using the Commercial Modular Aero-Propulsion System Simulation (C-MAPSS). The dataset includes data from four different simulations, each representing unique combinations of operational conditions and fault modes. Multiple sensor readings were recorded to monitor and model engine degradation over time.
+            
+            This dataset is provided by the Prognostics Center of Excellence (CoE) at NASA Ames and is widely used in research on predictive maintenance and fault diagnosis.</p>
+    </section>
+
+    <section class="rectBox">
+        <h2>Dataset</h2>
+        <br>
+        <img src="{{ url_for('static', filename='img/datasetImg1.png') }}" alt="Dataset">
+    </section>
+    
+    <section class="rectBox">
+        <h2>Dataset Sizes</h2>
+        <div class="box-container">
+            <div class="data-box">
+                <h3>Training Data Size</h3>
+                <p>Size: (20631 x 26)</p>
+            </div>
+            <div class="data-box">
+                <h3>Testing Data Size</h3>
+                <p>Size: (13096 x 26)</p>
+            </div>
+            <div class="data-box">
+                <h3>Train Traget Data Size</h3>
+                <p>Size: (100 x 1)</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="rectBox">
+        <h2>Features</h2>
+        <p>The dataset records the following types of features:</p>
+        <h3>Operational Settings:</h3>
+        <p>Parameters that describe the operational conditions of the engine. For example, settings such as altitude, Mach number, and throttle ratio.</p>
+
+        <h3>Sensor Measurements:</h3>
+        <p>The dataset contains 21 different sensor readings that monitor engine performance, including parameters like:</p>
+        <br>
+        <img style="margin-left: 230px;" src="{{ url_for('static', filename='img/features.png') }}" alt="Features">
+    </section>
+
+    <section class="rectBox">
+        <h2>Dataset Details</h2>
+    
+        <h3>Simulations</h3>
+        <p>The dataset includes four subsets: FD001, FD002, FD003, and FD004. Each subset varies in terms of fault modes, which represent different types of failures that the engines may experience. Additionally, the operational conditions for each subset differ, encompassing various combinations of environmental and performance parameters. This variation allows for a comprehensive understanding of engine degradation under diverse scenarios.</p>
+    
+        <br>
+        <h3>Target Variable - Remaining Useful Life (RUL)</h3>
+        <p>The key task in this dataset is to predict the Remaining Useful Life (RUL), which indicates the number of remaining cycles or time steps until the engine fails. Accurately predicting RUL is crucial for developing predictive maintenance models that help anticipate when maintenance should be performed, ultimately avoiding unexpected failures and reducing downtime.</p>
+    
+        <br>
+        <h3>Training and Testing</h3>
+        <p>The training data comprises time-series data collected from various engines, with each engine running until failure. This dataset is essential for training machine learning models, enabling them to identify patterns of degradation over time. In contrast, the testing data consists of partial time-series data, where the task is to predict how much useful life remains before the engine fails, based on the available measurements.</p>
+        <br>
+        <h3>Challenges</h3>
+        <p>One of the main challenges in using this dataset is the complexity of the data. The engines operate under different conditions and fault modes, leading to highly intricate patterns of degradation that make RUL prediction difficult. Moreover, some sensor readings may contain noise, which can adversely affect the accuracy of the models. Therefore, it is essential to perform thorough cleaning and preprocessing of the data before training the models.</p>
+    </section>
+
+    <footer>
+        <div class="social-handles">
+            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                <img src="{{ url_for('static', filename='img/facebook.png') }}" alt="Facebook">
+            </a>
+            <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+                <img src="{{ url_for('static', filename='img/x.png') }}" alt="Twitter">
+            </a>
+            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                <img src="{{ url_for('static', filename='img/instagram.png') }}" alt="Instagram">
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+                <img src="{{ url_for('static', filename='img/linkedin.png') }}" alt="LinkedIn">
+            </a>
+        </div>
+        <div class="copyright">
+            &copy; 2024 All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

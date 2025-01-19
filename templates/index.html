@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Project - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='img/engine-logo.jpg') }}" alt="Logo">
+        </div>
+
+        <h2> RUL Prediction
+            <hr style="color: white;">
+            <p style="font-size: small;">Remaining Useful Life of Engines</p>
+        </h2>
+        <nav>
+            <ul>
+                <li class="navBorder" id="ra121"><a style="color: black;" href="{{ url_for('index') }}" aria-label="Home">Home</a></li>
+                <li id="ra122"><a href="{{ url_for('dataset') }}" aria-label="Dataset">Dataset</a></li>
+                <li id="ra125"><a href="{{ url_for('index1') }}" aria-label="Predict">Predict</a></li>
+                <li id="ra123"><a href="{{ url_for('results') }}" aria-label="Results">Results</a></li>
+                <li id="ra124"><a href="{{ url_for('about') }}" aria-label="Team">Team</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- Introduction Section -->
+    <div class="hero-section text-center">
+        <h1>Accurate Engine Health Predictions</h1>
+        <p>Predicting Remaining Useful Life of Engines with Machine Learning Models</p>
+        <a href="#technologies" class="btn btn-light">Learn More</a>
+    </div>
+
+    <div id="features1" class="features-section">
+        <h2 class="features-title">Key Features</h2>
+        <div class="features-list">
+            
+            <div class="feature-item">
+                <h3>Data Preprocessing</h3>
+                <p>Robust preprocessing steps are implemented to clean and normalize the dataset, enhancing the model's performance and reliability in real-world applications.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Feature Importance Analysis</h3>
+                <p>Feature importance techniques are applied to identify key parameters affecting engine performance, allowing for more informed decision-making and model optimization.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Interactive Visualization</h3>
+                <p>The project includes a web-based interface for displaying model performance metrics, with real-time visualizations generated from PostgreSQL data.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Comprehensive Reporting</h3>
+                <p>Detailed reports on engine performance and predictions are generated, helping stakeholders to understand maintenance needs and optimize operational efficiency.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="technologies" class="technologies-section">
+        <h2 class="heading-title">Technologies & Libraries Used</h2>
+    
+        <div class="tech-container">
+            <!-- Left Box: Technologies -->
+            <div class="tech-box left-box">
+                <h3>Technologies Used</h3>
+                <ul>
+                    <li><strong>PostgreSQL</strong> - A powerful open-source relational database system known for its robustness and advanced features. It supports complex queries, transactions, and concurrency, making it an ideal choice for managing large datasets efficiently. PostgreSQL also offers extensive data integrity, security features, and support for various data types, including JSON, which is useful for modern applications.</li>
+                    
+                    <li><strong>Flask</strong> - A lightweight and flexible web framework for Python that is designed for building web applications quickly and easily. Flask follows the WSGI (Web Server Gateway Interface) standard and offers simplicity in routing, templating, and handling requests. Its modular architecture allows developers to choose the tools and libraries they want to integrate, making it an excellent choice for both small and large applications.</li>
+                    
+                    <li><strong>Python</strong> - A high-level programming language known for its readability and versatility. It is widely used for data analysis, machine learning, and artificial intelligence due to its rich ecosystem of libraries and frameworks, such as NumPy, Pandas, and TensorFlow. Python's extensive community support and active development ensure continuous improvement and availability of resources for developers.</li>
+                    
+                    <li><strong>Frontend (HTML, CSS, JS, Bootstrap)</strong> - The combination of HTML for structuring content, CSS for styling and layout, and JavaScript for interactivity forms the backbone of modern web development. Bootstrap is a popular front-end framework that simplifies the design process by providing pre-built components and a responsive grid system, enabling developers to create visually appealing and mobile-friendly user interfaces efficiently.</li>
+                    
+                    <li><strong>AI and ML</strong> - Artificial Intelligence (AI) and Machine Learning (ML) are transformative technologies that enable systems to learn from data and make predictions or decisions without being explicitly programmed. In this project, AI and ML techniques are utilized for predictive modeling, allowing the application to analyze historical data, identify patterns, and generate actionable insights that help optimize engine performance and maintenance schedules.</li>
+                </ul>
+                
+            </div>
+    
+            <!-- Right Box: Libraries -->
+            <div class="tech-box right-box">
+                <h3>Libraries Used</h3>
+                <ul>
+                    <li><strong>psycopg2</strong> - A popular PostgreSQL adapter for Python that allows for efficient interaction with PostgreSQL databases, enabling the execution of SQL commands and retrieval of results with ease.</li>
+                    <li><strong>scikit-learn</strong> - A powerful machine learning library providing simple and efficient tools for data mining and analysis, including various algorithms like Random Forest, SVM, and KNN for classification and regression tasks.</li>
+                    <li><strong>pandas</strong> - An essential library for data manipulation and analysis, offering data structures like DataFrames and tools for handling structured data, making it easier to clean and transform datasets.</li>
+                    <li><strong>tensorflow</strong> - A robust open-source deep learning framework that facilitates the creation and training of neural networks, enabling the development of complex models for tasks like image recognition and natural language processing.</li>
+                    <li><strong>matplotlib and seaborn</strong> - Visualization libraries that allow users to create a wide range of static, animated, and interactive plots in Python, enhancing the ability to analyze and present data visually.</li>
+                    <li><strong>numpy</strong> - The foundational library for numerical computing in Python, providing support for large multi-dimensional arrays and matrices, along with a collection of mathematical functions to operate on these data structures.</li>
+                    <li><strong>sklearn</strong> - Often referred to as scikit-learn, this library encompasses a variety of machine learning utilities and algorithms, making it easier to implement model selection, evaluation, and optimization in Python.</li>
+                    <li><strong>PIL and IO</strong> - Python Imaging Library (PIL) and the IO module are used for opening, manipulating, and displaying images in various formats, particularly for handling and visualizing images retrieved from PostgreSQL databases.</li>
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div id="models" class="models-section">
+        <h2 class="models-title">Machine Learning Models Used</h2>
+        <div class="model-container">
+            <div class="model-card">
+                <div class="card-body text-center">
+                    <i class="fas fa-tree model-icon"></i>
+                    <h5 class="card-title">Random Forest</h5>
+                    <p class="card-text">An ensemble learning method that combines multiple decision trees to improve prediction accuracy and control overfitting.</p>
+                </div>
+            </div>
+            <div class="model-card">
+                <div class="card-body text-center">
+                    <i class="fas fa-balance-scale model-icon"></i>
+                    <h5 class="card-title">Support Vector Regression (SVR)</h5>
+                    <p class="card-text">A regression technique that uses the concept of support vectors to predict continuous values, by finding the best-fit line in a higher-dimensional space.</p>
+                </div>
+            </div>
+            <div class="model-card">
+                <div class="card-body text-center">
+                    <i class="fas fa-chart-line model-icon"></i>
+                    <h5 class="card-title">Linear Regression</h5>
+                    <p class="card-text">A simple regression model used to predict the continuous RUL values based on a linear relationship with input features.</p>
+                </div>
+            </div>
+            <div class="model-card">
+                <div class="card-body text-center">
+                    <i class="fab fa-creative-commons-sampling model-icon"></i>
+                    <h5 class="card-title">XGBoost</h5>
+                    <p class="card-text">An efficient and scalable gradient boosting framework that has shown high performance in various machine learning competitions.</p>
+                </div>
+            </div>
+            <div class="model-card">
+                <div class="card-body text-center">
+                    <i class="fas fa-users model-icon"></i>
+                    <h5 class="card-title">K-Nearest Neighbors (KNN)</h5>
+                    <p class="card-text">A non-parametric method used for classification and regression that predicts the RUL based on the K nearest training examples in the feature space.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div id="model-comparison" class="model-comparison-section container mt-5">
+        <h2 class="model-comparison-title text-center mb-4">Model Comparison</h2>
+        <table class="table table-bordered table-striped text-center">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Model</th>
+                    <th scope="col">Training RMSE</th>
+                    <th scope="col">Training R² Score</th>
+                    <th scope="col">Testing RMSE</th>
+                    <th scope="col">Testing R² Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Random Forest</td>
+                    <td>15.79</td>
+                    <td>0.86</td>
+                    <td>28.15</td>
+                    <td>0.54</td>
+                </tr>
+                <tr>
+                    <td>Support Vector Regression (SVR)</td>
+                    <td>19.76</td>
+                    <td>0.79</td>
+                    <td>23.7</td>
+                    <td>0.67</td>
+                </tr>
+                <tr>
+                    <td>Linear Regression</td>
+                    <td>22.62</td>
+                    <td>0.73</td>
+                    <td>29.07</td>
+                    <td>0.51</td>
+                </tr>
+                <tr>
+                    <td>XGBoost</td>
+                    <td>20.58</td>
+                    <td>0.77</td>
+                    <td>23.80</td>
+                    <td>0.67</td>
+                </tr>
+                <tr>
+                    <td>K-Nearest Neighbors (KNN)</td>
+                    <td>29.16</td>
+                    <td>0.55</td>
+                    <td>30.73</td>
+                    <td>0.45</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <!-- Methodology Section -->
+    <div class="methodology">
+        <h2>Methodology</h2>
+    
+        <!-- <h3>Key Steps:</h3> -->
+    
+        <div class="methodology-container">
+            <div class="methodology-card">
+                <h4>Data Collection</h4>
+                <p>Gathering raw data from various sensors in the engine, ensuring it covers a wide range of operating conditions. This data serves as the foundation for all subsequent analyses, allowing for a comprehensive understanding of engine behavior.</p>
+            </div>
+            <div class="methodology-card">
+                <h4>Data Preprocessing</h4>
+                <p>Cleaning and preparing sensor data for modeling involves removing noise and outliers, handling missing values, and transforming data into a suitable format. This step ensures that the dataset is accurate and reliable, which is critical for effective modeling.</p>
+            </div>
+            <div class="methodology-card">
+                <h4>Feature Engineering</h4>
+                <p>Extracting relevant features from the cleaned dataset that significantly influence engine performance. This may include calculating ratios, creating interaction terms, and selecting key metrics, which enhances the predictive power of the model.</p>
+            </div>
+            <div class="methodology-card">
+                <h4>Model Training</h4>
+                <p>Training machine learning models on the prepared data by utilizing various algorithms such as Random Forest, SVM, and XGBoost. This phase involves tuning hyperparameters and using cross-validation to optimize model performance.</p>
+            </div>
+            <div class="methodology-card">
+                <h4>Evaluation</h4>
+                <p>Validating model performance with test datasets to assess accuracy, precision, and recall. Various metrics are utilized, such as RMSE and R², to ensure the model's predictions are reliable and can generalize well to unseen data.</p>
+            </div>
+            <div class="methodology-card">
+                <h4>Deployment</h4>
+                <p>Implementing the trained model into a production environment where it can make real-time predictions. This step includes integrating the model with user interfaces, ensuring robust performance, and conducting post-deployment monitoring to adapt to changes in data over time.</p>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <!-- Dataset Section -->
+    <section class="dataset">
+        <h2>About the Dataset</h2>
+        <p>
+            The dataset used for this project consists of sensor readings collected from multiple engines under
+            different operational conditions. The data includes parameters such as temperature, pressure, and vibration,
+            which directly impact the engine's health. It is publicly available and widely used in predictive
+            maintenance research.
+        </p>
+        <p><a href="{{ url_for('dataset') }}">Explore the dataset</a></p>
+    </section>
+    
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="social-handles">
+            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                <img src="{{ url_for('static', filename='img/facebook.png') }}" alt="Facebook">
+            </a>
+            <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+                <img src="{{ url_for('static', filename='img/x.png') }}" alt="Twitter">
+            </a>
+            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                <img src="{{ url_for('static', filename='img/instagram.png') }}" alt="Instagram">
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+                <img src="{{ url_for('static', filename='img/linkedin.png') }}" alt="LinkedIn">
+            </a>
+        </div>
+        <div class="copyright">
+            &copy; 2024 All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

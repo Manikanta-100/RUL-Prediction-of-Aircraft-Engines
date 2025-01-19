@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Project - Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='img/engine-logo.jpg') }}" alt="Logo">
+        </div>
+
+        <h2>RUL Prediction
+            <hr style="color: white;">
+            <p style="font-size: small;">Remaining Useful Life of Engines</p>
+        </h2>
+        <nav>
+            <ul>
+                <li id="ra121"><a href="{{ url_for('index') }}" aria-label="Home">Home</a></li>
+                <li id="ra122"><a href="{{ url_for('dataset') }}" aria-label="Dataset">Dataset</a></li>
+                <li id="ra125"><a href="{{ url_for('index1') }}" aria-label="Predict">Predict</a></li>
+                <li class="navBorder" id="ra123"><a style="color: black;" href="{{ url_for('results') }}" aria-label="Results">Results</a></li>
+                <li id="ra124"><a href="{{ url_for('about') }}" aria-label="Team">Team</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="resultContainer">
+        <h2 style="text-align:center">RUL Prediction Results</h2>
+        <p style="text-align:center; margin: 10px 0px; font-size: 18px;">Here, we present a comprehensive analysis of the different machine learning model's performance and insights derived from the CMAPPS dataset.</p>
+
+        <!-- Image container with Flexbox styling -->
+        <div class="image-row">
+            <div class="image-row-box">
+                <h4>Outliers Detection:
+                    <select class="imageSelector" id="boxplotSelector" onchange="changeImage('boxplotSelector', 'boxplotImage')" style="display: inline-block;">
+                        <option value="boxplot_s2">Box plot2</option>
+                        <option value="boxplot_s3">Box plot3</option>
+                        <option value="boxplot_s4">Box plot4</option>
+                        <option value="boxplot_s7">Box plot7</option>
+                        <option value="boxplot_s8">Box plot8</option>
+                        <option value="boxplot_s9">Box plot9</option>
+                        <option value="boxplot_s11">Box plot11</option>
+                        <option value="boxplot_s12">Box plot12</option>
+                        <option value="boxplot_s13">Box plot13</option>
+                        <option value="boxplot_s14">Box plot14</option>
+                        <option value="boxplot_s15">Box plot15</option>
+                        <option value="boxplot_s17">Box plot17</option>
+                        <option value="boxplot_s20">Box plot20</option>
+                        <option value="boxplot_s21">Box plot21</option>
+                    </select>
+                </h4>
+                <img id="boxplotImage" src="{{ url_for('get_image', image_id='boxplot_s2') }}" alt="Box plot1">
+            </div>
+
+            <div class="image-row-box">
+                <h4>Sensor Values Distribution:
+                    <select class="imageSelector" id="histogramSelector" onchange="changeImage('histogramSelector', 'histogramImage')" style="display: inline-block;">
+                        <option value="Histogram_s2">Histogram plot2</option>
+                        <option value="Histogram_s3">Histogram plot3</option>
+                        <option value="Histogram_s4">Histogram plot4</option>
+                        <option value="Histogram_s7">Histogram plot7</option>
+                        <option value="Histogram_s8">Histogram plot8</option>
+                        <option value="Histogram_s9">Histogram plot9</option>
+                        <option value="Histogram_s11">Histogram plot11</option>
+                        <option value="Histogram_s12">Histogram plot12</option>
+                        <option value="Histogram_s13">Histogram plot13</option>
+                        <option value="Histogram_s14">Histogram plot14</option>
+                        <option value="Histogram_s15">Histogram plot15</option>
+                        <option value="Histogram_s17">Histogram plot17</option>
+                        <option value="Histogram_s20">Histogram plot20</option>
+                        <option value="Histogram_s21">Histogram plot21</option>
+                    </select>
+                </h4>
+                <img id="histogramImage" src="{{ url_for('get_image', image_id='Histogram_s2') }}" alt="Histogram plot1">
+            </div>
+        </div>
+
+
+        <div class="image-row">
+            <div class="image-row-box">
+                <h4>Corelation:</h4>
+                <img class="fitImg" style="margin-top: 90px;" src="{{ url_for('get_image', image_id='corr_graph') }}" alt="Result 3">
+            </div>
+            <div class="image-row-box">
+                <h4>Important features of Models:
+                    <select class="imageSelector" id="featureSelector" onchange="changeImage('featureSelector', 'featureImage')" style="display: inline-block;">
+                        <option value="FeatureImportance_XG">XGBoost</option>
+                        <option value="FeatureImportance_svr">SVR</option>
+                        <option value="FeatureImportance_rf">Random Forest</option>
+                    </select>
+                </h4>
+                <img id="featureImage" src="{{ url_for('get_image', image_id='FeatureImportance_XG') }}" alt="Result 1">
+            </div>
+        </div>
+        
+        
+        <div class="image-fullrow">
+            <h4>RUL according to training dataset:</h4>
+            <img style="max-height: 600px;" id="trainRulImage" src="{{ url_for('get_image', image_id='train_rul') }}" alt="Result 1">
+        </div>
+
+
+        <div class="image-fullrow">
+            <h4>Variation of sensor value:
+                <select class="imageSelector" id="sensorSelector" onchange="changeImage('sensorSelector', 'sensorImage')" style="display: inline-block;">
+                    <option value="RULvss2">RUL vs S2</option>
+                    <option value="RULvss3">RUL vs S3</option>
+                    <option value="RULvss4">RUL vs S4</option>
+                    <option value="RULvss7">RUL vs S7</option>
+                    <option value="RULvss8">RUL vs S8</option>
+                    <option value="RULvss9">RUL vs S9</option>
+                    <option value="RULvss11">RUL vs S11</option>
+                    <option value="RULvss12">RUL vs S12</option>
+                    <option value="RULvss13">RUL vs S13</option>
+                    <option value="RULvss14">RUL vs S14</option>
+                    <option value="RULvss15">RUL vs S15</option>
+                    <option value="RULvss17">RUL vs S17</option>
+                    <option value="RULvss20">RUL vs S20</option>
+                    <option value="RULvss21">RUL vs S21</option>
+                </select>
+            </h4>
+            <img id="sensorImage" src="{{ url_for('get_image', image_id='RULvss2') }}" alt="Result 1">
+        </div>
+        
+        <br>
+        <div class="image-fullrow">
+                <h4 style="text-align:center">Model Predictions</h4>
+                
+                <!-- Buttons for each model -->
+                <div style="text-align:center; margin-bottom: 20px;">
+                    
+                    <button id="SVRprediction-btn" onclick="changeModel('SVRprediction', this)">SVR</button>
+                    <button id="RFprediction-btn" onclick="changeModel('RFprediction', this)">Random Forest</button>
+                    <button style="background-color: #45a049;" id="XGBoostprediction-btn" onclick="changeModel('XGBoostprediction', this)">XGBoost</button>
+                    <button id="KNNprediction-btn" onclick="changeModel('KNNprediction', this)">KNN</button>
+                    <button id="linearprediction-btn" onclick="changeModel('linearprediction', this)">Linear Regression</button>
+                </div>
+            
+                <!-- Image container -->
+                <img id="modelImage" src="{{ url_for('get_image', image_id='XGBoostprediction') }}" alt="Model Prediction">
+            </div>
+            
+        <div id="showAll" style="display: none;">
+        <div class="image-fullrow">
+            <h4>RFprediction:</h4>
+            <img id="sensorImage" src="{{ url_for('get_image', image_id='RFprediction') }}" alt="Result 1">
+        </div>
+        
+        <div class="image-fullrow">
+            <h4>SVRprediction:</h4>
+            <img id="sensorImage" src="{{ url_for('get_image', image_id='SVRprediction') }}" alt="Result 1">
+        </div>
+        
+        <div class="image-fullrow">
+            <h4>linearprediction</h4>
+            <img id="sensorImage" src="{{ url_for('get_image', image_id='linearprediction') }}" alt="Result 1">
+        </div>
+        
+        <div class="image-fullrow">
+            <h4>XGBoostprediction:</h4>
+            <img id="sensorImage" src="{{ url_for('get_image', image_id='XGBoostprediction') }}" alt="Result 1">
+        </div>
+        
+        <div class="image-fullrow">
+            <h4>KNNprediction:</h4>
+            <img id="sensorImage" src="{{ url_for('get_image', image_id='KNNprediction') }}" alt="Result 1">
+        </div>
+    </div>
+
+    
+
+   </div>
+
+    <footer>
+        <div class="social-handles">
+            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                <img src="{{ url_for('static', filename='img/facebook.png') }}" alt="Facebook">
+            </a>
+            <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+                <img src="{{ url_for('static', filename='img/x.png') }}" alt="Twitter">
+            </a>
+            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                <img src="{{ url_for('static', filename='img/instagram.png') }}" alt="Instagram">
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+                <img src="{{ url_for('static', filename='img/linkedin.png') }}" alt="LinkedIn">
+            </a>
+        </div>
+        <div class="copyright">
+            &copy; 2024 All rights reserved.
+        </div>
+    </footer>
+
+</body>
+<script>
+    function changeImage(selectorId, imageId) {
+        const imageIdValue = document.getElementById(selectorId).value;
+        document.getElementById(imageId).src = "{{ url_for('get_image', image_id='') }}" + imageIdValue;
+    }
+    
+    function changeModel(modelName, buttonElement) {
+        document.getElementById('modelImage').src = "{{ url_for('get_image', image_id='') }}" + modelName;
+
+        const buttons = document.querySelectorAll("button");
+        buttons.forEach(btn => {
+            btn.style.backgroundColor = "";
+        });
+
+        buttonElement.style.backgroundColor = "#45a049";
+    }
+</script>
+
+</script>
+
+</html>

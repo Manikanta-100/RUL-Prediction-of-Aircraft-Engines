@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RUL Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 70px;
+        }
+        .form-container {
+            width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+        
+        footer {
+    width: 100%;
+}
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="{{ url_for('static', filename='img/engine-logo.jpg') }}" alt="Logo">
+    </div>
+
+    <h2> RUL Prediction
+        <hr style="color: white;">
+        <p style="font-size: small;">Remaining Useful Life of Engines</p>
+    </h2>
+    <nav>
+        <ul>
+            <li id="ra121"><a href="{{ url_for('index') }}" aria-label="Home">Home</a></li>
+            <li id="ra122"><a href="{{ url_for('dataset') }}" aria-label="Dataset">Dataset</a></li>
+            <li class="navBorder" id="ra125"><a style="color: black;" href="{{ url_for('index1') }}" aria-label="Predict">Predict</a></li>
+            <li id="ra123"><a href="{{ url_for('results') }}" aria-label="Results">Results</a></li>
+            <li id="ra124"><a href="{{ url_for('about') }}" aria-label="Team">Team</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="form-container">
+    <h2>RUL Prediction Form</h2>
+    <form action="/predict" method="POST">
+        <!-- Engine -->
+        <div class="form-group">
+            <label for="engine">Engine:</label>
+            <input type="number" id="engine" name="engine" value="1" required>
+        </div>
+        <!-- Time -->
+        <div class="form-group">
+            <label for="time">Time:</label>
+            <input type="number" id="time" name="time" value="3" required>
+        </div>
+        <!-- Settings -->
+        <div class="form-group">
+            <label for="setting1">Setting 1:</label>
+            <input type="number" id="setting1" name="setting1" value="-0.0043" required>
+        </div>
+        <div class="form-group">
+            <label for="setting2">Setting 2:</label>
+            <input type="number" id="setting2" name="setting2" value="0.0003" required>
+        </div>
+        <div class="form-group">
+            <label for="setting3">Setting 3:</label>
+            <input type="number" id="setting3" name="setting3" value="100" required>
+        </div>
+        <!-- Sensors -->
+        <h3>Sensors Data:</h3>
+        <div class="form-group">
+            <label for="sensor1">Sensor 1:</label>
+            <input type="number" id="sensor1" name="sensor1" value="518.67" required>
+        </div>
+        <div class="form-group">
+            <label for="sensor2">Sensor 2:</label>
+            <input type="number" id="sensor2" name="sensor2" value="642.35" required>
+        </div>
+        <!-- Add more sensor inputs here up to Sensor 21 -->
+        <!-- Example -->
+        <div class="form-group">
+            <label for="sensor3">Sensor 3:</label>
+            <input type="number" id="sensor3" name="sensor3" value="1587.99" required>
+        </div>
+        <div class="form-group">
+            <label for="sensor4">Sensor 4:</label>
+            <input type="number" id="sensor4" name="sensor4" value="1404.2" required>
+        </div>
+        <div class="form-group">
+            <label for="sensor5">Sensor 5:</label>
+            <input type="number" id="sensor5" name="sensor5" value="14.62" required>
+        </div>
+        <div class="form-group">
+            <label for="sensor6">Sensor 6:</label>
+            <input type="number" id="sensor6" name="sensor6" value="21.61" required>
+        </div>
+        <div class="form-group">
+            <label for="sensor7">Sensor 7:</label>
+            <input type="number" id="sensor7" name="sensor7" value="554.26" required>
+        </div>
+        <div class="form-group">
+            <label for="sensor8">Sensor 8:</label>
+            <input type="number" id="sensor8" name="sensor8" value="2388.08" required>
+        </div>
+        <div class="form-group">
+            <label for="sensor9">Sensor 9:</label>
+            <input type="number" id="sensor9" name="sensor9" value="9052.94" required>
+        </div>
+        <div class="form-group">
+            <label for="sensor10">Sensor 10:</label>
+            <input type="number" id="sensor10" name="sensor10" value="1.3" required>
+        </div>
+        <div class="form-group">
+            <label for="sensor11">Sensor 11:</label>
+            <input type="number" id="sensor11" name="sensor11" value="47.27" required>
+        </div>
+        <div class="form-group">
+            <label for="sensor12">Sensor 12:</label>
+            <input type="number" id="sensor12" name="sensor12" value="522.42" required>
+        </div>
+        <div class="form-group">
+            <label for="sensor13">Sensor 13:</label>
+            <input type="number" id="sensor13" name="sensor13" value="2388.03" required>
+        </div>
+        <div class="form-group">
+            <label for="sensor14">Sensor 14:</label>
+            <input type="number" id="sensor14" name="sensor14" value="8133.23" required>
+        </div>
+        <div class="form-group">
+            <label for="sensor15">Sensor 15:</label>
+            <input type="number" id="sensor15" name="sensor15" value="8.4178" required>
+        </div>
+        <div class="form-group">
+            <label for="sensor16">Sensor 16:</label>
+            <input type="number" id="sensor16" name="sensor16" value="0.03" required>
+        </div>
+        <div class="form-group">
+            <label for="sensor17">Sensor 17:</label>
+            <input type="number" id="sensor17" name="sensor17" value="390" required>
+        </div>
+        <div class="form-group">
+            <label for="sensor18">Sensor 18:</label>
+            <input type="number" id="sensor18" name="sensor18" value="2388" required>
+        </div>
+        <div class="form-group">
+            <label for="sensor19">Sensor 19:</label>
+            <input type="number" id="sensor19" name="sensor19" value="100" required>
+        </div>
+        <div class="form-group">
+            <label for="sensor20">Sensor 20:</label>
+            <input type="number" id="sensor20" name="sensor20" value="38.95" required>
+        </div>
+        <!-- Sensor 21 -->
+        <div class="form-group">
+            <label for="sensor21">Sensor 21:</label>
+            <input type="number" id="sensor21" name="sensor21" value="23.3442" required>
+        </div>
+
+        <button type="submit" class="submit-btn">Predict RUL</button>
+    </form>
+</div>
+
+<footer>
+    <div class="social-handles">
+        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+            <img src="{{ url_for('static', filename='img/facebook.png') }}" alt="Facebook">
+        </a>
+        <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+            <img src="{{ url_for('static', filename='img/x.png') }}" alt="Twitter">
+        </a>
+        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+            <img src="{{ url_for('static', filename='img/instagram.png') }}" alt="Instagram">
+        </a>
+        <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+            <img src="{{ url_for('static', filename='img/linkedin.png') }}" alt="LinkedIn">
+        </a>
+    </div>
+    <div class="copyright">
+        &copy; 2024 All rights reserved.
+    </div>
+</footer>
+
+</body>
+</html>
